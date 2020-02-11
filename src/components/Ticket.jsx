@@ -8,19 +8,30 @@ const minutesElapsed = (futureStamp, pastStamp) => {
 function Ticket(props) {
     const layoutStyles = {
         display: 'grid',
-        gridTemplateColumns: '1fr 1fr 2fr',
+        gridTemplateColumns: '1fr 1fr 4fr',
+    };
+    const locationStyles = {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+    };
+    const timeStyles = {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: 'rgba(0, 0, 0, 0.5)',
     };
 
     return (
         <div style={layoutStyles}>
-            <div>
+            <div style={locationStyles}>
                 <p>{props.location}</p>
             </div>
-            <div>
+            <div style={timeStyles}>
                 <p>{minutesElapsed(new Date(), props.timestamp)}m</p>
             </div>
-            <div>
-                <h3>{props.names}</h3>
+            <div sty>
+                <p>{props.names}</p>
             </div>
         </div>
     );

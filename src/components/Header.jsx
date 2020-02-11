@@ -3,7 +3,7 @@ import React from 'react';
 function Header() {
     const styles = {
         backgroundColor: '#e03636',
-        fontFamily: 'sans-serif',
+        fontFamily: 'Roboto',
         color: 'white',
         textAlign: 'center',
         margin: '0',
