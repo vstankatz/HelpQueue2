@@ -1,10 +1,10 @@
 import React from 'react';
+import { HashRouter as Router, Switch, Route } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
 import Header from './Header';
 import TicketList from './TicketList';
 import NewTicketForm from './NewTicketForm';
-
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
 
 export default function App() {
     return (

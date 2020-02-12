@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-function Header() {
+export default function Header() {
     const styles = {
         backgroundColor: '#e03636',
         fontFamily: 'Roboto',
@@ -8,10 +9,18 @@ function Header() {
         textAlign: 'center',
         margin: '0',
         height: '8vh',
-        fontSize: '6vh',
-        lineHeight: '8vh',
+        fontSize: '2vh',
     };
-    return <h1 style={styles}>Queue</h1>;
+    return (
+        <div style={styles}>
+            <h1 style={{ margin: '0', fontSize: '4vh' }}>Queue</h1>
+            <Link to="/" style={{ color: 'white' }}>
+                Home
+            </Link>{' '}
+            |{' '}
+            <Link to="/newticket" style={{ color: 'white' }}>
+                Create Ticket
+            </Link>
+        </div>
+    );
 }
-
-export default Header;
