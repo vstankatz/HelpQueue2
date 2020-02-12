@@ -1,18 +1,18 @@
 import React from 'react';
 import Header from './Header';
 import TicketList from './TicketList';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-function App() {
+export default function App() {
     return (
-        <div>
-            <header>
+        <Router>
+            <div>
                 <Header />
-            </header>
-            <main>
-                <TicketList />
-            </main>
-        </div>
+                <Switch>
+                    <Route exact path="/" component={TicketList} />
+                </Switch>
+            </div>
+        </Router>
     );
 }
-
-export default App;
