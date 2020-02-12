@@ -1,6 +1,8 @@
 import React from 'react';
 import Header from './Header';
 import TicketList from './TicketList';
+import NewTicketForm from './NewTicketForm';
+
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
@@ -11,6 +13,7 @@ export default function App() {
                 <Header />
                 <Switch>
                     <Route exact path="/" component={TicketList} />
+                    <Route exact path="/newticket" component={NewTicketForm} />
                 </Switch>
             </div>
         </Router>
