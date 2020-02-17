@@ -30,7 +30,7 @@ function Ticket(props) {
             <div style={timeStyles}>
                 <p>{minutesElapsed(new Date(), props.timestamp)}m</p>
             </div>
-            <div sty>
+            <div>
                 <p>{props.names}</p>
             </div>
         </div>
