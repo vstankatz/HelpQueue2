@@ -7,20 +7,48 @@ import Header from './Header';
 import TicketList from './TicketList';
 import NewTicketForm from './NewTicketForm';
 
-export default function App() {
-    return (
-        <Router>
+export default class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            masterTicketList: [],
+        };
+        this.handleAddingNewTicket = this.handleAddingNewTicket.bind(this);
+    }
+    handleAddingNewTicket(newTicket) {
+        this.setState({
+            masterTicketList: [...this.state.masterTicketList, newTicket],
+        });
+        //This is how the program says you should push to the new array, its not very clean.
+        // var newMasterTicketList = this.state.masterTicketList.slice();
+        // newMasterTicketList.push(newTicket);
+        // this.setState({ masterTicketList: newMasterTicketList });
+    }
+
+    render() {
+        return (
             <div>
                 <Header />
                 <Switch>
-                    <Route exact path="/" component={TicketList} />
                     <Route
                         exact
+                        path="/"
+                        render={() => (
+                            <TicketList
+                                ticketList={this.state.masterTicketList}
+                            />
+                        )}
+                    />
+                    <Route
                         path="/newticket"
-                        component={NewTicketControl}
+                        render={() => (
+                            <NewTicketControl
+                                onNewTicketCreation={this.handleAddingNewTicket}
+                            />
+                        )}
                     />
                 </Switch>
             </div>
-        </Router>
-    );
+        );
+    }
 }
